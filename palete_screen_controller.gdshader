@@ -1,3 +1,4 @@
+// This code changes all the colors where the texture of a color rect with this shader is applied
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture; // texture size in screen
