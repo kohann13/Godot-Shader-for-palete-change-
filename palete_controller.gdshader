@@ -1,3 +1,4 @@
+// This code is used to change the color of a specific sprite in its shader material
 shader_type canvas_item;
 
 uniform int color_count : hint_range(1, 3); // Number of colors to be replaced
