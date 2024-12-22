@@ -1,13 +1,13 @@
 shader_type canvas_item;
 
-uniform int color_count : hint_range(1, 4); // Number of colors to be replaced
-uniform vec4 target_color[4] : source_color; // List of colors to be replaced
-uniform vec4 replacement_color[4] : source_color; // List of new colors to replace the target colors
-uniform float tolerance : hint_range(0.3, 1.0); // Tolerance for color matching
+uniform int color_count : hint_range(1, 3); // Number of colors to be replaced
+uniform vec4 target_color[3] : source_color; // List of colors to be replaced
+uniform vec4 replacement_color[3] : source_color; // List of new colors to replace the target colors
+uniform float tolerance : hint_range(0.3, 1.0); // Tolerance for color matching (If the color does not change in the game, adjust this value)
 
 
 void fragment() {
-    vec4 current_color = texture(TEXTURE, SCREEN_UV); // Gets the current pixel color
+    vec4 current_color = texture(TEXTURE, UV); // Gets the current pixel color
 
     // Calculates the difference between colors
     for(int I = 0; I < color_count;I++)
